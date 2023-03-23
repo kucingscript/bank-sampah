@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply font-poppins text-[16px];
+    }
+
+    .btn {
+        @apply px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-lg sm:px-4 bg-green text-dark sm:text-base hover:scale-105 active:scale-95;
+    }
+
+    .labelForm {
+        @apply block text-sm font-semibold text-green;
+    }
+
+    .inputForm {
+        @apply block w-full p-4 mt-2 text-gray-500 bg-gray-900 rounded-lg outline-none placeholder: placeholder:text-sm;
+    }
+}
+
+.animate__img {
+    animation: move 1.5s ease alternate infinite;
+}
+
+.btn__shadow {
+    box-shadow: rgba(255, 255, 255, 0.3) 2.95px 3.95px 2.95px;
+}
+
+.shape__bg {
+    padding: 23rem;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.shape__bg:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.danger__img {
+    background: url(../img/sampah_berbahaya.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    width: 360px;
+    height: 360px;
+    box-shadow: inset 0 0 0 9px rgb(255, 255, 255 / 30%);
+    order: 1;
+    justify-self: center;
+    animation: profile__animate 8s ease-in-out infinite;
+}
+
+.act__img {
+    background: url("../img/aktivitas.webp");
+    background-repeat: no-repeat;
+    background-position: -10rem center;
+    background-size: cover;
+    width: 360px;
+    height: 360px;
+    box-shadow: inset 0 0 0 9px rgb(255, 255, 255 / 30%);
+    order: 1;
+    justify-self: center;
+    animation: profile__animate 8s ease-in-out infinite;
+}
+
+@media screen and (max-width: 576px) {
+    .shape__bg {
+        padding: 8rem;
+        background-position: bottom;
+    }
+
+    .danger__img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .act__img {
+        width: 200px;
+        height: 200px;
+        background-position: -5rem center;
+    }
+}
+
+@keyframes profile__animate {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 30% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
