@@ -3,7 +3,7 @@
 @endpush
 
 
-<div class="section text-[#c4c3ca] bg-[#23242D] px-4 overflow-x-hidden">
+<div class="section text-[#c4c3ca] bg-[#23242D] px-4 overflow-hidden">
     <div class="container">
         <div class="row full-height justify-content-center">
             <div class="py-5 text-center col-12 align-self-center">
@@ -38,6 +38,7 @@
 
                                         @include('partials.account.fullname')
                                         @include('partials.account.username')
+                                        @include('partials.account.email')
                                         @include('partials.account.password')
 
                                         <button type="submit" class="mt-4 btn">SUBMIT</button>

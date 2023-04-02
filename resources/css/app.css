@@ -16,14 +16,6 @@
     .btn {
         @apply px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-lg sm:px-4 bg-green text-dark sm:text-base hover:scale-105 active:scale-95;
     }
-
-    .labelForm {
-        @apply block text-sm font-semibold text-green;
-    }
-
-    .inputForm {
-        @apply block w-full p-4 mt-2 text-gray-500 bg-gray-900 rounded-lg outline-none placeholder: placeholder:text-sm;
-    }
 }
 
 .animate__img {
@@ -32,6 +24,18 @@
 
 .btn__shadow {
     box-shadow: rgba(255, 255, 255, 0.3) 2.95px 3.95px 2.95px;
+}
+
+.curved__line {
+    width: 10rem;
+    height: 2rem;
+    border: 7px solid #15191f;
+    border-color: #15191f transparent transparent transparent;
+    border-radius: 150%/60px 70px 0 0;
+}
+
+.flickity-viewport {
+    height: 400px !important;
 }
 
 .shape__bg {
@@ -95,6 +99,10 @@
         height: 200px;
         background-position: -5rem center;
     }
+
+    .flickity-viewport {
+        height: 300px !important;
+    }
 }
 
 @keyframes profile__animate {
@@ -117,6 +125,6 @@
     }
 
     100% {
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
 }

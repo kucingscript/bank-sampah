@@ -6,7 +6,7 @@
             </h1>
             <p class="pt-2 text-xs font-semibold sm:text-sm text-green">
                 Sampah Anorganik <br />
-                <span class="font-normal">Tidak Terkelola dengan Baik</span>
+                <span class="font-normal">tidak terkelola dengan Baik</span>
             </p>
         </div>
     </div>

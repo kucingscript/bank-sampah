@@ -1,4 +1,4 @@
-<a href="/">
+<a href="/home">
     <div class="my-8 logo">
         <div class="text-xl font-bold sm:text-2xl text-green">
             Go

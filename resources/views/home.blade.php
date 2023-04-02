@@ -20,7 +20,7 @@
         @include('partials.home.sampahB')
     </section>
 
-    <section id="jenisSampah" class="flex flex-col items-center justify-center min-h-screen bg-slate-100">
+    <section id="jenisSampah" class="flex flex-col items-center justify-center h-full bg-slate-100 sm:py-16 py-0">
         @include('partials.home.jenisSampah')
     </section>
 

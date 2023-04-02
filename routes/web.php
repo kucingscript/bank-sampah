@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BtnController::class, 'btnList']);
 
-Route::get('/home', [HomeController::class, "home"]);
+Route::get('/home', [HomeController::class, "index"]);
 
-Route::get('/information', [InformationController::class, "navbar"]);
+Route::get('/information', [InformationController::class, "index"]);
 
 Route::get('/account', function () {
     return view("account");

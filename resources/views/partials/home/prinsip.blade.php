@@ -1,8 +1,8 @@
 <img src="{{ url('/asset/wave.svg') }}" alt="Wave" />
 
-<h1 class="text-4xl font-bold text-center sm:-mt-10 sm:text-5xl
-    text-dark">
+<h1 class="text-4xl font-bold text-center sm:-mt-10 sm:text-5xl text-dark">
     Prinsip 3R
+    <div class="mx-auto curved__line"></div>
 </h1>
 
 <div
