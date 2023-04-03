@@ -3,8 +3,8 @@
 </h1>
 
 <div
-    class="container flex flex-col items-center justify-between pb-0 mt-16 space-y-10 sm:mt-20 sm:pb-20 sm:space-y-0 sm:flex-row">
-    <div class="danger__img order-1"></div>
+    class="container flex flex-col items-center justify-center pb-0 mt-16 space-y-10 sm:space-x-20 sm:mt-20 sm:pb-20 sm:space-y-0 sm:flex-row">
+    <div class="order-1 danger__img"></div>
     <div class="order-2 px-4">
 
         @include('partials.home.sampahB.sampahBText')

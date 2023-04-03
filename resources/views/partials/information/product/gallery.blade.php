@@ -28,7 +28,7 @@
 
                 <div class="col-start-1 row-start-1 carousel" x-ref="carousel">
                     @foreach ($carouselImages as $carouselImage)
-                        <div class="w-full px-2 sm:w-3/5">
+                        <div class="w-full px-2 sm:w-1/2">
                             <img src="{{ $carouselImage->src }}" loading="lazy">
                         </div>
                     @endforeach
