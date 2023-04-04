@@ -11,7 +11,7 @@
                     <h6 class="pb-3 mb-0"><span>Log In </span><span>Sign Up</span></h6>
                     <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
                     <label for="reg-log"></label>
-                    
+
                     @include('partials.account.logo')
 
                     <div class="mx-auto card-3d-wrap">
@@ -26,7 +26,7 @@
                                         @error('email')
                                             <div>{{ $message }}</div>
                                         @enderror
-                                            
+
                                         @include('partials.account.password')
                                         @error('password')
                                             <div>{{ $message }}</div>
@@ -43,13 +43,14 @@
                                         <h4 class="pb-3 mb-4">SIGN UP</h4>
 
                                         @include('partials.account.fullname')
-                                        @error('name')
-                                            <div>{{ $message }}</div>
-                                        @enderror
                                         @include('partials.account.username')
+                                        @error('name')
+                                            <div class="text-sm">{{ $message }}</div>
+                                        @enderror
+                                        @include('partials.account.email')
                                         @include('partials.account.password')
                                         @error('password')
-                                            <div>{{ $message }}</div>
+                                            <div class="text-sm">{{ $message }}</div>
                                         @enderror
 
                                         <button type="submit" class="mt-4 btn">SUBMIT</button>
