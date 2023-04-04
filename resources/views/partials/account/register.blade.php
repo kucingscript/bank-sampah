@@ -3,7 +3,7 @@
 @endpush
 
 
-<div class="section text-[#c4c3ca] bg-[#23242D] px-4 overflow-x-hidden">
+<div class="section text-[#c4c3ca] bg-[#23242D] px-4 overflow-hidden">
     <div class="container">
         <div class="row full-height justify-content-center">
             <div class="py-5 text-center col-12 align-self-center">
@@ -47,9 +47,6 @@
                                             <div>{{ $message }}</div>
                                         @enderror
                                         @include('partials.account.username')
-                                        @error('email')
-                                            <div>{{ $message }}</div>
-                                        @enderror
                                         @include('partials.account.password')
                                         @error('password')
                                             <div>{{ $message }}</div>

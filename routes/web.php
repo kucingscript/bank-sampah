@@ -19,14 +19,12 @@ use App\Http\Controllers\InformationController;
 
 Route::get('/', [BtnController::class, 'btnList']);
 
-Route::get('/home', [HomeController::class, "home"]);
+Route::get('/home', [HomeController::class, "index"]);
 
-Route::get('/information', [InformationController::class, "navbar"])->middleware('auth');
+Route::get('/information', [InformationController::class, "index"])->middleware('auth');
 
 Route::get('/account', [AuthController::class, "index"])->name('account');
 Route::post('/login', [AuthController::class, "login"]);
 Route::post('/register', [AuthController::class, "register"]);
 Route::get('/test', [AuthController::class, "test"]);
 Route::get('/logout', [AuthController::class, "logout"]);
-
-
