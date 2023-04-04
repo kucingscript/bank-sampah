@@ -39,7 +39,7 @@
 }
 
 .shape__bg {
-    padding: 23rem;
+    padding: 25rem;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;

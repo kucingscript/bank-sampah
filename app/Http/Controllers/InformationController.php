@@ -19,7 +19,7 @@ class InformationController extends Controller
                 'title' => 'Informasi', 'isActive' => true, "link" => "/information",
             ],
             (object) [
-                'title' => 'Akunku', 'isActive' => false, "link" => "/account"
+                'title' => 'Akunku', 'isActive' => false, "link" => "/login"
             ],
         ]);
 

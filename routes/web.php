@@ -5,6 +5,7 @@ use App\Http\Controllers\BtnController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformationController;
+use Symfony\Component\HttpFoundation\AcceptHeader;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,11 @@ Route::get('/home', [HomeController::class, "index"]);
 
 Route::get('/information', [InformationController::class, "index"])->middleware('auth');
 
-Route::get('/account', [AuthController::class, "index"])->name('account');
-Route::post('/login', [AuthController::class, "login"]);
-Route::post('/register', [AuthController::class, "register"]);
-Route::get('/test', [AuthController::class, "test"]);
-Route::get('/logout', [AuthController::class, "logout"]);
+Route::view('/login', 'login');
+Route::view('/register', 'register');
+
+// Route::get('/account', [AuthController::class, "index"])->name('account');
+// Route::post('/login', [AuthController::class, "login"]);
+// Route::post('/register', [AuthController::class, "register"]);
+// Route::get('/test', [AuthController::class, "test"]);
+// Route::get('/logout', [AuthController::class, "logout"]);

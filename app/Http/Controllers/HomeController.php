@@ -19,7 +19,7 @@ class HomeController extends Controller
                 'title' => 'Informasi', 'isActive' => false, "link" => "/information",
             ],
             (object) [
-                'title' => 'Akunku', 'isActive' => false, "link" => "/account"
+                'title' => 'Akunku', 'isActive' => false, "link" => "/login"
             ],
         ]);
 

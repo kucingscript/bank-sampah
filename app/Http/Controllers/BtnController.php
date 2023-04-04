@@ -16,7 +16,7 @@ class BtnController extends Controller
                 'title' => 'Informasi', 'link' => '/information',
             ],
             (object) [
-                'title' => 'Akunku', 'link' => '/account',
+                'title' => 'Akunku', 'link' => '/login',
             ],
         ]);
         return view('landing', ["btns" => $btns]);
