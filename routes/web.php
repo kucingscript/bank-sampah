@@ -27,7 +27,7 @@ Route::get('/information', [InformationController::class, "index"])->middleware(
 Route::view('/login', 'login');
 Route::view('/register', 'register');
 
-// Route::get('/account', [AuthController::class, "index"])->name('account');
+Route::get('/account', [AuthController::class, "index"])->name('account');
 // Route::post('/login', [AuthController::class, "login"]);
 // Route::post('/register', [AuthController::class, "register"]);
 // Route::get('/test', [AuthController::class, "test"]);
