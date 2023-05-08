@@ -17,11 +17,17 @@
                                 <h4 class="pb-8">SIGN UP</h4>
 
                                 @include('partials.account.fullname')
-                                @include('partials.account.username')
                                 @error('name')
                                     <div class="text-sm">{{ $message }}</div>
                                 @enderror
+                                @include('partials.account.username')
+                                @error('username')
+                                    <div class="text-sm">{{ $message }}</div>
+                                @enderror
                                 @include('partials.account.email')
+                                @error('email')
+                                    <div class="text-sm">{{ $message }}</div>
+                                @enderror
                                 @include('partials.account.password')
                                 @error('password')
                                     <div class="text-sm">{{ $message }}</div>

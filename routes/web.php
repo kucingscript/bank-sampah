@@ -19,16 +19,14 @@ use Symfony\Component\HttpFoundation\AcceptHeader;
 */
 
 Route::get('/', [BtnController::class, 'btnList']);
-
 Route::get('/home', [HomeController::class, "index"]);
-
 Route::get('/information', [InformationController::class, "index"])->middleware('auth');
 
-Route::view('/login', 'login');
-Route::view('/register', 'register');
+// auth
+Route::view('/login', 'login')->middleware('guest')->name('login');
+Route::view('/register', 'register')->middleware('guest');
 
-Route::get('/account', [AuthController::class, "index"])->name('account');
-// Route::post('/login', [AuthController::class, "login"]);
-// Route::post('/register', [AuthController::class, "register"]);
-// Route::get('/test', [AuthController::class, "test"]);
-// Route::get('/logout', [AuthController::class, "logout"]);
+Route::post('/login', [AuthController::class, "login"]);
+Route::post('/register', [AuthController::class, "register"]);
+Route::get('/test', [AuthController::class, "test"]);
+Route::get('/logout', [AuthController::class, "logout"]);
