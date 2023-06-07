@@ -1,1 +1,2 @@
-{{auth::user}}
+{{Auth::user()}}
+{{Str::random(64)}}

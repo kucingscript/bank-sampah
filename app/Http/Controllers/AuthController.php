@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
@@ -17,6 +19,7 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
+        
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required']
@@ -26,10 +29,10 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('/');
+            return redirect()->intended('/information');
         }
         return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->onlyInput('email');
-    }
+    } 
 
     public function register(Request $request)
     {
@@ -50,7 +53,11 @@ class AuthController extends Controller
 
         $user->save();
 
-        return redirect()->intended('/');
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect()->intended('/email/verify');
     }
 
     public function logout(Request $request)
