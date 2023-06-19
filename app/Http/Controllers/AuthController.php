@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
     //
     public function index()
     {
-        return view('account');
+        return view('register');
     }
     public function login(Request $request)
     {
+        
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required'],
             'password' => ['required']
         ]);
         
@@ -26,29 +29,35 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('/');
+            return redirect()->intended('/information');
         }
         return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->onlyInput('email');
-    }
+    } 
 
     public function register(Request $request)
     {
-        // dd($request);
+        // dd($request->all());
         $request->validate([
             'name' => ['required', 'min:5'],
+            'username' => ['required', 'min:5', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'min:9']
         ]); 
 
         $user = new User([
             'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
 
         $user->save();
 
-        return redirect()->intended('/account');
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect()->intended('/email/verify');
     }
 
     public function logout(Request $request)
@@ -64,6 +73,8 @@ class AuthController extends Controller
 
     public function test()
     {
-        dd(auth::user()->name);
+        echo auth::user()->name;
+        echo auth::user()->username;
+        echo auth::user()->email;
     }
 }
