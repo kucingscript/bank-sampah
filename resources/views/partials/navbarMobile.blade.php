@@ -5,8 +5,8 @@
     </button>
 
     <div>
-        <div class="fixed left-0 w-full px-8 pt-2 pb-8 bg-dark top-16" x-show="isOpen" @click.away=" isOpen = false"
-            x-transition.opacity>
+        <div class="absolute z-10 left-0 w-screen px-8 pt-2 pb-8 bg-dark top-16" x-show="isOpen"
+            @click.away=" isOpen = false" x-transition.opacity>
             <ul class="flex flex-col space-y-6">
                 @include('partials.navbarList')
             </ul>

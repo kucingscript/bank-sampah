@@ -1,5 +1,7 @@
-<h1 class="text-5xl font-bold text-center text-transparent bg-linearGreen bg-clip-text">
-    Sampah
+<h1 class="text-5xl font-bold text-center text-transparent bg-linearGreen bg-clip-text relative">
+    <img src="{{ url('/asset/skull.svg') }}" alt="Danger"
+        class="absolute w-10 sm:w-16 sm:block hidden -top-16 -right-2" />
+    Sampah Berbahaya
 </h1>
 
 <div

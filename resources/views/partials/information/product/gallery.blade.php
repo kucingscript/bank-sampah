@@ -1,5 +1,5 @@
 <main class="pt-10 pb-10 sm:pb-20" text-dark" x-data="carouselFilter()">
-    <div class="container grid grid-cols-1">
+    <div class="xl:container sm:px-20 grid grid-cols-1">
 
         <div class="col-start-1 row-start-2" x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform scale-90"
@@ -28,7 +28,7 @@
 
                 <div class="col-start-1 row-start-1 carousel" x-ref="carousel">
                     @foreach ($carouselImages as $carouselImage)
-                        <div class="w-full px-2 sm:w-1/2">
+                        <div class="w-full px-2 sm:w-1/2 ">
                             <img src="{{ $carouselImage->src }}" loading="lazy">
                         </div>
                     @endforeach

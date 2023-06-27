@@ -1,32 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{-- {{Auth::user()}} --}}
-    <h2>
-        Forgot password        
-    </h2>
+@extends('layouts.main')
 
-    <form method="POST" action="{{route('password.update')}}"> 
-        @csrf
-        <label for="email">email</label>
-        <input type="text" name="email" value="{{$_GET['email']}}" readonly>
+@section('content')
+    <div class="h-screen w-full flex flex-col justify-center text-[#c4c3ca] bg-[#23242D] px-2">
+        <div class="container">
+            <div class="text-center">
+                @include('partials.account.logo')
 
-        <label for="password">Password</label>
-        <input type="password" name="password">
+                <div class="mx-auto card-3d-wrap">
+                    <div class="card-3d-wrapper">
+                        <div class="card-front">
+                            <div class="center-wrap">
+                                <form method="POST" action="{{ route('password.update') }}">
+                                    @csrf
+                                    <h4 class="pb-8 text-2xl">RESET PASSWORD</h4>
 
-        <label for="password_confirmation">password confirm</label>
-        <input type="password" name="password_confirmation">
+                                    @include('partials.account.resetpwd.email')
 
-        <input type="hidden" name="token" value="{{$token}}">
+                                    @include('partials.account.password')
+                                    @error('password')
+                                        <div class="text-xs text-red-500 mb-2">{{ $message }}</div>
+                                    @enderror
 
-        <button type="submit">Submit</button>
-        
-    </form>
-</body>
-</html>
+                                    @include('partials.account.resetpwd.confirmpwd')
+                                    @error('password_confirmation')
+                                        <div class="text-xs text-red-500 mb-2">{{ $message }}</div>
+                                    @enderror
+
+
+                                    <input type="hidden" name="token" value="{{ $token }}">
+
+                                    <p class="sm:text-sm text-xs text-left mt-2">Already have an account yet ? <a
+                                            class="text-green" href="/login">Login</a>
+                                    </p>
+
+                                    <button type="submit" class="mt-6 btn">RESET</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

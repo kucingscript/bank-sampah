@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply font-poppins text-[16px];
+        @apply text-[16px] font-poppins;
     }
 
     .btn {
@@ -34,20 +34,27 @@
     border-radius: 150%/60px 70px 0 0;
 }
 
+.curved__line-modal {
+    width: 10rem;
+    height: 2rem;
+    border: 7px solid #15191f;
+    border-color: #15191f transparent transparent transparent;
+    border-radius: 150%/60px 70px 0 0;
+}
+
 .flickity-viewport {
     height: 400px !important;
 }
 
 .shape__bg {
-    padding: 25rem;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    background-image: url(../img/hero.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
+    background: url(../img/hero.jpg) center/cover no-repeat;
+    height: 100vh;
+    width: 60vw;
 }
 
-.shape__bg:before {
+.shape__bg::before {
     content: "";
     background: rgba(0, 0, 0, 0.4);
     position: absolute;
@@ -71,7 +78,7 @@
 }
 
 .act__img {
-    background: url("../img/aktivitas.webp");
+    background: url(../img/aktivitas.webp);
     background-repeat: no-repeat;
     background-position: -10rem center;
     background-size: cover;
@@ -85,8 +92,8 @@
 
 @media screen and (max-width: 576px) {
     .shape__bg {
-        padding: 8rem;
         background-position: bottom;
+        width: 100vw;
     }
 
     .danger__img {
@@ -101,8 +108,20 @@
     }
 
     .flickity-viewport {
-        height: 300px !important;
+        height: 260px !important;
     }
+
+    .curved__line-modal {
+        width: 6rem;
+        height: 1.5rem;
+    }
+}
+
+.bg__pattern {
+    background: radial-gradient(circle, #80ed99 10%, transparent 11%);
+    background-size: 3em 3em;
+    background-color: #f1f5f9;
+    opacity: 1;
 }
 
 @keyframes profile__animate {

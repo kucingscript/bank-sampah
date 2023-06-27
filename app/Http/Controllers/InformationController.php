@@ -19,7 +19,10 @@ class InformationController extends Controller
                 'title' => 'Informasi', 'isActive' => true, "link" => "/information",
             ],
             (object) [
-                'title' => 'Akunku', 'isActive' => false, "link" => "/login"
+                'title' => 'Profile', 'isActive' => false, "link" => "/profile",
+            ],
+            (object) [
+                'title' => 'Logout', 'isActive' => false, "link" => "/logout"
             ],
         ]);
 
@@ -53,8 +56,43 @@ class InformationController extends Controller
             ],
         ]);
 
+        $testimonialTexts = collect([
+            (object) [
+                'active' => 1, 'text' => 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+            ],
+            (object) [
+                'active' => 2, 'text' => 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+            ],
+            (object) [
+                'active' => 3, 'text' => 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+            ],
+        ]);
+
+        $testimonialUsers = collect([
+            (object) [
+                'active' => 1, 'user' => 'JD'
+            ],
+            (object) [
+                'active' => 2, 'user' => 'WD'
+            ],
+            (object) [
+                'active' => 3, 'user' => 'JW'
+            ],
+        ]);
+
+        $testimonialDesc = collect([
+            (object) [
+                'active' => 1, 'user' => 'John Doe', 'desc' => 'google.com'
+            ],
+            (object) [
+                'active' => 2, 'user' => 'John Wick', 'desc' => 'google.com'
+            ],
+            (object) [
+                'active' => 3, 'user' => 'Jane Doe', 'desc' => 'google.com'
+            ],
+        ]);
 
 
-        return view("/information", ["navbarLists" => $navbarLists, "carouselTexts" => $carouselTexts, "carouselImages" => $carouselImages]);
+        return view("/information", ["navbarLists" => $navbarLists, "carouselTexts" => $carouselTexts, "carouselImages" => $carouselImages, "testimonialTexts" => $testimonialTexts, "testimonialUsers" => $testimonialUsers, "testimonialDesc" => $testimonialDesc]);
     }
 }

@@ -19,30 +19,30 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
-        
+
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required']
         ]);
-        
- 
+
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended('/information');
         }
-        return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->onlyInput('email');
-    } 
+        return back()->withErrors(['email' => '*Username or password is wrong'])->onlyInput('email');
+    }
 
     public function register(Request $request)
     {
         // dd($request->all());
         $request->validate([
             'name' => ['required', 'min:5'],
-            'username' => ['required', 'min:5', 'unique:users,username'],
+            'username' => ['required', 'min:3', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'password' => ['required', 'min:9']
-        ]); 
+            'password' => ['required', 'min:6']
+        ]);
 
         $user = new User([
             'name' => $request->name,
@@ -63,11 +63,11 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
- 
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 

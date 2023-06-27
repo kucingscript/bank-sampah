@@ -10,13 +10,13 @@ class BtnController extends Controller
     {
         $btns = collect([
             (object) [
-                'title' => 'Beranda', 'link' => '/home',
+                'title' => 'Beranda', 'link' => '/home', 'img' => 'estate.svg'
             ],
             (object) [
-                'title' => 'Informasi', 'link' => '/information',
+                'title' => 'Informasi', 'link' => '/information', 'img' => 'information.svg'
             ],
             (object) [
-                'title' => 'Akunku', 'link' => '/login',
+                'title' => 'Akun', 'link' => '/login', 'img' => 'acc.svg'
             ],
         ]);
         return view('landing', ["btns" => $btns]);

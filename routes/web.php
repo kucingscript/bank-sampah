@@ -29,7 +29,8 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 Route::get('/', [BtnController::class, 'btnList']);
 Route::get('/home', [HomeController::class, "index"]);
 Route::get('/information', [InformationController::class, "index"])->middleware(['auth', 'verified']);
-Route::view('/profile', 'partials.account.testprofil');
+Route::view('/profile', 'profile');
+Route::view('/account', 'partials.account.testprofil');
 
 // auth
 Route::view('/login', 'login')->middleware('guest')->name('login');
@@ -77,7 +78,8 @@ Route::post('/reset-password', function (Request $request) {
     $request->validate([
         'token' => 'required',
         'email' => 'required|email',
-        'password' => 'required|min:8|confirmed',
+        'password' => 'required|min:6',
+        'password_confirmation' => 'required|same:password'
     ]);
 
     $status = Password::reset(

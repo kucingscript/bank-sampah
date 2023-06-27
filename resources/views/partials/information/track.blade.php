@@ -1,4 +1,4 @@
-<h1 class="sm:text-4xl text-3xl text-transparent bg-linearGreen bg-clip-text font-bold ">
+<h1 class="sm:text-4xl text-3xl text-transparent text-center bg-linearGreen bg-clip-text font-bold ">
     Lacak Pesanan Anda
 </h1>
 

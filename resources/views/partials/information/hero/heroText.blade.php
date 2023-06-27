@@ -5,6 +5,17 @@
     Informasi Sistem Manajemen Pengolahan Sampah Sukorame
 </p>
 
-<a href="#product">
-    <button class="w-1/3 btn btn__shadow">Explore</button>
-</a>
+<div class="flex justify-start items-center" x-data="{ open: false }">
+    <a href="#product" class="sm:w-1/3 w-1/2 btn btn__shadow mr-4 text-center">
+        <button>
+            Explore &nbsp;
+            <img src="{{ url('/asset/explore.svg') }}" alt="Explore" class="sm:w-7 w-5 inline sm:-mt-2 -mt-1" />
+        </button>
+    </a>
+    <a href="#contact" class="sm:w-1/3 w-1/2 btn btn__shadow mr-4 text-center">
+        <button>
+            Contact &nbsp;
+            <img src="{{ url('/asset/contact.svg') }}" alt="contact" class="sm:w-7 w-5 inline sm:-mt-2 -mt-1" />
+        </button>
+    </a>
+</div>
